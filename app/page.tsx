@@ -1,17 +1,18 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 const data = {
   en: {
-    nav: ["About", "Experience", "Projects", "Education", "News", "Resume", "Contact"],
+    nav: ["Experience", "Projects", "Education", "Contact"],
     status: "Available for selected opportunities",
     label: "Autonomy engineer · Software developer",
     headline: ["Hi, I’m", "Sohan Saldanha"],
     intro:
       "I’m interested in research and development in robotics, computer vision, and vision-language-action (VLA) systems—building intelligent machines that can perceive, understand, and act.",
     explore: "Explore projects",
-    connect: "Start a conversation",
+    connect: "Download CV",
     move: "Scroll to explore",
     about: [
       "01 — Profile",
@@ -113,14 +114,14 @@ const data = {
     top: "Back to top",
   },
   de: {
-    nav: ["Profil", "Erfahrung", "Projekte", "Kontakt"],
+    nav: ["Erfahrung", "Projekte", "Ausbildung", "Kontakt"],
     status: "Offen für ausgewählte Möglichkeiten",
     label: "Autonomie-Ingenieur · Softwareentwickler",
     headline: ["Ich entwickle Systeme,", "die wahrnehmen."],
     intro:
       "Robotik, Wahrnehmung und Software — entwickelt zu zuverlässigen Produkten, die komplexe Technik verständlich machen.",
     explore: "Projekte ansehen",
-    connect: "Gespräch beginnen",
+    connect: "Lebenslauf herunterladen",
     move: "Scrollen zum Entdecken",
     about: [
       "01 — Profil",
@@ -316,12 +317,6 @@ function ScrollScene() {
     scanCone.rotation.x = -Math.PI / 2;
     scanCone.position.z = 2.05;
     sensor.add(scanCone);
-    const targetBox = new THREE.LineSegments(
-      new THREE.EdgesGeometry(new THREE.BoxGeometry(1.15, 0.85, 1.15)),
-      new THREE.LineBasicMaterial({ color: 0xa8ff35, transparent: true, opacity: 0.75 }),
-    );
-    targetBox.position.set(-1.1, -0.15, 3.5);
-    group.add(targetBox);
     const cloudPositions: number[] = [];
     for (let i = 0; i < 520; i++) {
       const a = Math.random() * Math.PI * 2,
@@ -375,8 +370,6 @@ function ScrollScene() {
       shoulder.rotation.z = -0.45 + Math.sin(currentScroll * Math.PI * 1.3) * 0.72;
       elbow.rotation.z = 0.72 - Math.sin(currentScroll * Math.PI * 1.15) * 0.92;
       sensor.rotation.y = Math.sin(currentScroll * Math.PI * 2) * 0.38;
-      targetBox.rotation.y += reduce ? 0 : 0.004;
-      targetBox.scale.setScalar(0.94 + Math.sin(Date.now() * 0.003) * 0.05);
       points.rotation.y = currentScroll * 0.35;
       renderer.render(scene, camera);
       frame = requestAnimationFrame(render);
@@ -428,7 +421,7 @@ export default function Home() {
   }, [lang]);
   return (
     <main id="top">
-      <a className="skip" href="#content">
+      <a className="skip" href="#about">
         Skip to content
       </a>
       <div className="grid" aria-hidden="true" />
@@ -439,7 +432,7 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           {t.nav.map((x, i) => (
-            <a key={x} href={`#${["about", "experience", "work", "contact"][i]}`}>
+            <a key={x} href={`#${["experience", "work", "education", "contact"][i]}`}>
               {x}
             </a>
           ))}
@@ -453,61 +446,57 @@ export default function Home() {
           </button>
         </div>
       </header>
-      <section className="hero" id="content">
+      <section className="hero" id="about">
         <div className="heroCopy">
           <p className="status">
             <i />
             {t.status}
           </p>
           <p className="eyebrow">{t.label}</p>
-          <h1>
-            {t.headline[0]}
-            <br />
-            <em>{t.headline[1]}</em>
-          </h1>
+          <div className="heroIdentity">
+            <h1>
+              {t.headline[0]}
+              <br />
+              <em>{t.headline[1]}</em>
+            </h1>
+            <div className="heroProfile">
+              <div className="profileFrame">
+                <Image
+                  src="/images/Bearbeitet.jpeg"
+                  alt="Portrait of Sohan Saldanha"
+                  fill
+                  priority
+                  sizes="(max-width: 600px) 42vw, 20vw"
+                />
+              </div>
+              <div className="profileLinks" aria-label="Sohan Saldanha's contact links">
+                <a href="https://www.linkedin.com/in/sohanjs/" target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+                <a href="https://github.com/sohanjs111" target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+                <a href="mailto:sohan.j.saldanha@fau.de">Email</a>
+              </div>
+            </div>
+          </div>
           <p className="intro">{t.intro}</p>
+          <p className="heroBio">{t.about[2]}</p>
           <div className="actions">
             <a className="primary" href="#work">
               {t.explore}
               <b>↘</b>
             </a>
-            <a href="#contact">
+            <a href="/Sohan-Saldanha-CV.pdf" download>
               {t.connect}
-              <b>↗</b>
+              <b>↓</b>
             </a>
           </div>
-        </div>
-        <div className="sceneAnchor" aria-hidden="true">
-          <small>{t.move}</small>
         </div>
         <div className="signal">
           <span>01 PERCEIVE</span>
           <span>02 DECIDE</span>
           <span>03 ACT</span>
-        </div>
-      </section>
-      <section className="section about" id="about">
-        <Head tag={t.about[0]} title={t.about[1]} />
-        <div className="aboutLayout reveal">
-          <p>{t.about[2]}</p>
-          <div className="facts">
-            {t.facts.map(([a, b], i) => (
-              <div key={a} style={{ "--delay": `${i * 90}ms` } as React.CSSProperties}>
-                <small>{a}</small>
-                <b>{b}</b>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="skills reveal">
-          <small>{t.skills}</small>
-          <div>
-            {t.skillList.map((x, i) => (
-              <span key={x} style={{ "--delay": `${i * 45}ms` } as React.CSSProperties}>
-                {x}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
       <section className="section experience" id="experience">
@@ -562,7 +551,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="section education">
+      <section className="section education" id="education">
         <Head tag={t.edu[0]} title={t.edu[1]} />
         <div className="degrees">
           {t.degrees.map(([a, b, c, d], i) => (
@@ -584,11 +573,11 @@ export default function Home() {
         <h2>{t.contact[1]}</h2>
         <p>{t.contact[2]}</p>
         <div>
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:sohan.j.saldanha@fau.de">
             {t.mail}
             <b>↗</b>
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/sohanjs/" target="_blank" rel="noreferrer">
             {t.linkedin}
             <b>↗</b>
           </a>
