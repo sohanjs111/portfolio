@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Sohan Saldanha, an autonomy technologies master's student and software developer working in robotics, computer vision and intelligent systems.",
   other: {
-    "codex-preview": "development",
+    "portfolio": "under development",
   },
   icons: {
     icon: "/favicon.svg",
