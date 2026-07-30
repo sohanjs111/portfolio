@@ -5,13 +5,14 @@ import * as THREE from "three";
 
 const data = {
   en: {
-    nav: ["Experience", "Projects", "Education", "Contact"],
-    status: "Available for selected opportunities",
-    label: "Autonomy engineer · Software developer",
+    nav: ["Experience", "Education", "Contact"],
+    status: "Master Student at FAU",
+    latest: "Latest:",
+    label: ["Started my Bachelor Thesis with Bosch.", "Updating my website."],
     headline: ["Hi, I’m", "Sohan Saldanha"],
     intro:
       "I’m interested in research and development in robotics, computer vision, and vision-language-action (VLA) systems—building intelligent machines that can perceive, understand, and act.",
-    explore: "Explore projects",
+    explore: "View experience",
     connect: "Download CV",
     move: "Scroll to explore",
     about: [
@@ -36,32 +37,121 @@ const data = {
       "Next.js",
       "Machine Learning",
     ],
-    exp: ["02 — Experience", "Learning by building."],
+    exp: ["Professional Experience"],
     experiences: [
-      [
-        "Now",
-        "M.Sc. Autonomy Technologies",
-        "FAU Erlangen-Nürnberg",
-        "Autonomous systems, robotics, machine learning and visual perception.",
-      ],
-      [
-        "Previous",
-        "Software Developer / Product Manager",
-        "Talents2Germany",
-        "RPA workflows, full-stack product development, chatbot and API integrations.",
-      ],
-      [
-        "Previous",
-        "Programming Tutor & Lab Assistant",
-        "THWS",
-        "C++ teaching and practical work in automation, embedded systems, computer vision and IoT.",
-      ],
-      [
-        "Thesis",
-        "LiDAR Localisation Research",
-        "THWS",
-        "Evaluation of localisation algorithms using simulated and real sensor data.",
-      ],
+      {
+        year: "2025",
+        roles: [
+          {
+            title: "Research Assistant",
+            date: "May 2025 – July 2025",
+            organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+            location: "Erlangen, Germany",
+            bullets: [
+              "Engineered scikit-learn pipelines to predict brain-region volumes from facial features, benchmarking linear, ridge, decision-tree, SVM and SGD models.",
+              "Constructed a PCA-based statistical shape model for 3D facial feature extraction and dimensionality reduction.",
+              "Performed feature selection, correlation analysis, outlier detection, cross-validation and hyperparameter optimization.",
+            ],
+          },
+          {
+            title: "Infant Vision Simulation",
+            date: "Oct 2024 – Jan 2025",
+            organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+            location: "Erlangen, Germany",
+            bullets: [
+              "Simulated age-dependent visual perception and trained VGG and ResNet18 architectures to study visual development.",
+              "Applied curriculum learning to TinyImageNet and egocentric datasets to emulate progressive infant visual maturation.",
+              "Assessed layer freezing and staged learning strategies for model accuracy and representation quality.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2024",
+        roles: [
+          {
+            title: "Product Manager — Software Development & Automation",
+            date: "Dec 2023 – Apr 2024",
+            organization: "Talents2Germany GmbH",
+            location: "Frankfurt am Main, Germany",
+            bullets: [
+              "Architected scalable Python RPA workflows for web scraping, validation, transformation and database integration.",
+              "Developed Laravel backend APIs connecting frontend applications, services and databases.",
+              "Enhanced an internal LMS with Next.js and maintained documentation, deployment procedures and workflows.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2023",
+        roles: [
+          {
+            title: "Programming Tutor — C++",
+            date: "Apr 2023 – July 2023",
+            organization: "Technical University of Applied Sciences Würzburg-Schweinfurt",
+            location: "Schweinfurt, Germany",
+            bullets: [
+              "Mentored students in C++, data structures, algorithms and operating-system fundamentals.",
+              "Designed practical coding exercises, debugging workshops and problem-solving sessions.",
+              "Guided students toward efficient, maintainable solutions and stronger software-engineering skills.",
+            ],
+          },
+          {
+            title: "Bachelor Thesis — LiDAR-Based Localization Evaluation",
+            date: "Sep 2022 – Mar 2023",
+            organization: "Technical University of Applied Sciences Würzburg-Schweinfurt",
+            location: "Schweinfurt, Germany",
+            bullets: [
+              "Investigated and benchmarked LiDAR localization algorithms in ROS for autonomous navigation.",
+              "Built data-acquisition pipelines with OptiTrack motion capture and Unity simulation environments.",
+              "Analyzed differences between simulated and real sensor data through reproducible experimentation.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2022",
+        roles: [
+          {
+            title: "Software Developer Intern",
+            date: "Apr 2022 – Sep 2022",
+            organization: "biz4d — Mentoring Club",
+            location: "Frankfurt am Main, Germany",
+            bullets: [
+              "Led five interns in developing a matching algorithm to improve recommendation quality and efficiency.",
+              "Containerized SuiteCRM and Laravel applications with Docker and administered Linux servers.",
+              "Established Git and GitHub practices for branching, reviews and collaborative debugging.",
+            ],
+          },
+          {
+            title: "Lab Assistant — Automated Systems and HMI",
+            date: "Oct 2021 – Mar 2022",
+            organization: "Technical University of Applied Sciences Würzburg-Schweinfurt",
+            location: "Schweinfurt, Germany",
+            bullets: [
+              "Supported more than 45 students in Node-RED, MQTT, microcontrollers and embedded systems.",
+              "Built and tested experimental HMI and automation setups for practical learning.",
+              "Helped the class achieve a 100% pass rate in written and practical examinations.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2021",
+        roles: [
+          {
+            title: "Mechatronic System for Part Classification",
+            date: "Apr 2021 – Aug 2021",
+            organization: "Kindermann GmbH",
+            location: "Würzburg, Germany",
+            bullets: [
+              "Delivered an end-to-end mechatronic system using computer vision and Node-RED for real-time part classification.",
+              "Trained ResNet and YOLO models that achieved 95% classification accuracy on production data.",
+              "Deployed an image acquisition, preprocessing and inference pipeline robust to changing lighting conditions.",
+            ],
+          },
+        ],
+      },
     ],
     work: ["03 — Selected projects", "Proof of work."],
     details: "View project details",
@@ -88,20 +178,26 @@ const data = {
         "Next.js / APIs / AI",
       ],
     ],
-    edu: ["04 — Education", "Built on two disciplines."],
+    edu: "Education",
+    specializationLabel: "Specialization",
     degrees: [
-      [
-        "Current",
-        "M.Sc. Autonomy Technologies",
-        "FAU Erlangen-Nürnberg",
-        "Autonomous systems · Robotics · Machine learning",
-      ],
-      [
-        "Completed",
-        "B.Eng. Mechatronics",
-        "THWS, Schweinfurt",
-        "Mechanics · Electronics · Software engineering",
-      ],
+      {
+        degree: "M.Sc. in Autonomy Technology",
+        organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+        location: "Erlangen, Germany",
+        specialization: ["Human-System Interfaces", "Sensor and Perception"],
+        logo: "/logos/fau_erlangen_nrnberg_logo.jpeg",
+      },
+      {
+        degree: "B.Eng. in Mechatronics",
+        organization: "Technical University of Applied Sciences Würzburg-Schweinfurt (THWS)",
+        location: "Schweinfurt, Germany",
+        specialization: [
+          "Automated Systems and Human-Machine Interaction",
+          "Automation and Robotics",
+        ],
+        logo: "/logos/thws_logo.jpeg",
+      },
     ],
     contact: [
       "05 — Contact",
@@ -114,13 +210,14 @@ const data = {
     top: "Back to top",
   },
   de: {
-    nav: ["Erfahrung", "Projekte", "Ausbildung", "Kontakt"],
-    status: "Offen für ausgewählte Möglichkeiten",
-    label: "Autonomie-Ingenieur · Softwareentwickler",
+    nav: ["Erfahrung", "Ausbildung", "Kontakt"],
+    status: "Masterstudent an der FAU",
+    latest: "Aktuell:",
+    label: ["Bachelorarbeit bei Bosch begonnen.", "Meine Website wird aktualisiert."],
     headline: ["Ich entwickle Systeme,", "die wahrnehmen."],
     intro:
       "Robotik, Wahrnehmung und Software — entwickelt zu zuverlässigen Produkten, die komplexe Technik verständlich machen.",
-    explore: "Projekte ansehen",
+    explore: "Erfahrung ansehen",
     connect: "Lebenslauf herunterladen",
     move: "Scrollen zum Entdecken",
     about: [
@@ -145,32 +242,121 @@ const data = {
       "Next.js",
       "Machine Learning",
     ],
-    exp: ["02 — Erfahrung", "Lernen durch Entwickeln."],
+    exp: ["Berufserfahrung"],
     experiences: [
-      [
-        "Aktuell",
-        "M.Sc. Autonomy Technologies",
-        "FAU Erlangen-Nürnberg",
-        "Autonome Systeme, Robotik, Machine Learning und visuelle Wahrnehmung.",
-      ],
-      [
-        "Zuvor",
-        "Softwareentwickler / Produktmanager",
-        "Talents2Germany",
-        "RPA-Prozesse, Full-Stack-Produktentwicklung, Chatbot- und API-Integrationen.",
-      ],
-      [
-        "Zuvor",
-        "Programmiertutor & Laborassistent",
-        "THWS",
-        "C++-Lehre und praktische Arbeit in Automation, Embedded Systems, Computer Vision und IoT.",
-      ],
-      [
-        "Abschlussarbeit",
-        "LiDAR-Lokalisierungsforschung",
-        "THWS",
-        "Evaluation von Lokalisierungsalgorithmen mit simulierten und realen Sensordaten.",
-      ],
+      {
+        year: "2025",
+        roles: [
+          {
+            title: "Wissenschaftliche Hilfskraft",
+            date: "Mai 2025 – Juli 2025",
+            organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+            location: "Erlangen, Deutschland",
+            bullets: [
+              "Entwicklung von scikit-learn-Pipelines zur Vorhersage von Hirnregionenvolumina aus Gesichtsmerkmalen.",
+              "Aufbau eines PCA-basierten statistischen Formmodells zur Extraktion von 3D-Gesichtsmerkmalen.",
+              "Durchführung von Merkmalsauswahl, Korrelationsanalysen, Kreuzvalidierung und Hyperparameteroptimierung.",
+            ],
+          },
+          {
+            title: "Simulation des kindlichen Sehens",
+            date: "Okt. 2024 – Jan. 2025",
+            organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+            location: "Erlangen, Deutschland",
+            bullets: [
+              "Simulation altersabhängiger visueller Wahrnehmung mit VGG- und ResNet18-Architekturen.",
+              "Anwendung von Curriculum Learning auf TinyImageNet und egozentrische Datensätze.",
+              "Untersuchung von Layer Freezing und stufenweisen Lernstrategien.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2024",
+        roles: [
+          {
+            title: "Produktmanager — Softwareentwicklung & Automatisierung",
+            date: "Dez. 2023 – Apr. 2024",
+            organization: "Talents2Germany GmbH",
+            location: "Frankfurt am Main, Deutschland",
+            bullets: [
+              "Entwicklung skalierbarer Python-RPA-Workflows für Scraping, Validierung und Datenintegration.",
+              "Entwicklung von Laravel-APIs zur Verbindung von Frontend, Backend und Datenbanken.",
+              "Weiterentwicklung eines internen LMS mit Next.js sowie Pflege der technischen Dokumentation.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2023",
+        roles: [
+          {
+            title: "Programmiertutor — C++",
+            date: "Apr. 2023 – Juli 2023",
+            organization: "Technische Hochschule Würzburg-Schweinfurt",
+            location: "Schweinfurt, Deutschland",
+            bullets: [
+              "Betreuung von Studierenden in C++, Datenstrukturen, Algorithmen und Betriebssystemgrundlagen.",
+              "Konzeption praktischer Programmierübungen, Debugging-Workshops und Problemlösungseinheiten.",
+              "Vermittlung effizienter und wartbarer C++-Lösungen.",
+            ],
+          },
+          {
+            title: "Bachelorarbeit — Evaluation LiDAR-basierter Lokalisierung",
+            date: "Sep. 2022 – März 2023",
+            organization: "Technische Hochschule Würzburg-Schweinfurt",
+            location: "Schweinfurt, Deutschland",
+            bullets: [
+              "Untersuchung und Benchmarking LiDAR-basierter Lokalisierungsalgorithmen in ROS.",
+              "Aufbau von Datenerfassungspipelines mit OptiTrack und Unity-Simulationen.",
+              "Analyse von Unterschieden zwischen simulierten und realen Sensordaten.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2022",
+        roles: [
+          {
+            title: "Praktikant Softwareentwicklung",
+            date: "Apr. 2022 – Sep. 2022",
+            organization: "biz4d — Mentoring Club",
+            location: "Frankfurt am Main, Deutschland",
+            bullets: [
+              "Leitung eines fünfköpfigen Teams bei der Entwicklung eines Matching-Algorithmus.",
+              "Containerisierung von SuiteCRM- und Laravel-Anwendungen mit Docker sowie Linux-Administration.",
+              "Einführung von Git- und GitHub-Prozessen für Branching, Reviews und Debugging.",
+            ],
+          },
+          {
+            title: "Laborassistent — Automatisierte Systeme und HMI",
+            date: "Okt. 2021 – März 2022",
+            organization: "Technische Hochschule Würzburg-Schweinfurt",
+            location: "Schweinfurt, Deutschland",
+            bullets: [
+              "Unterstützung von mehr als 45 Studierenden in Node-RED, MQTT und Embedded Systems.",
+              "Aufbau und Test experimenteller HMI- und Automatisierungsanlagen.",
+              "Unterstützung einer Erfolgsquote von 100% in schriftlichen und praktischen Prüfungen.",
+            ],
+          },
+        ],
+      },
+      {
+        year: "2021",
+        roles: [
+          {
+            title: "Mechatronisches System zur Teileklassifikation",
+            date: "Apr. 2021 – Aug. 2021",
+            organization: "Kindermann GmbH",
+            location: "Würzburg, Deutschland",
+            bullets: [
+              "Entwicklung eines mechatronischen Gesamtsystems mit Computer Vision und Node-RED.",
+              "Training von ResNet- und YOLO-Modellen mit 95% Klassifikationsgenauigkeit.",
+              "Bereitstellung einer robusten Pipeline für Bildaufnahme, Vorverarbeitung und Inferenz.",
+            ],
+          },
+        ],
+      },
     ],
     work: ["03 — Ausgewählte Projekte", "Arbeit, die für sich spricht."],
     details: "Projektdetails ansehen",
@@ -197,20 +383,26 @@ const data = {
         "Next.js / APIs / AI",
       ],
     ],
-    edu: ["04 — Ausbildung", "Auf zwei Disziplinen aufgebaut."],
+    edu: "Ausbildung",
+    specializationLabel: "Spezialisierung",
     degrees: [
-      [
-        "Aktuell",
-        "M.Sc. Autonomy Technologies",
-        "FAU Erlangen-Nürnberg",
-        "Autonome Systeme · Robotik · Machine Learning",
-      ],
-      [
-        "Abgeschlossen",
-        "B.Eng. Mechatronik",
-        "THWS, Schweinfurt",
-        "Mechanik · Elektronik · Softwareentwicklung",
-      ],
+      {
+        degree: "M.Sc. Autonomy Technology",
+        organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+        location: "Erlangen, Deutschland",
+        specialization: ["Mensch-System-Schnittstellen", "Sensorik und Wahrnehmung"],
+        logo: "/logos/fau_erlangen_nrnberg_logo.jpeg",
+      },
+      {
+        degree: "B.Eng. Mechatronik",
+        organization: "Technische Hochschule Würzburg-Schweinfurt (THWS)",
+        location: "Schweinfurt, Deutschland",
+        specialization: [
+          "Automatisierte Systeme und Mensch-Maschine-Interaktion",
+          "Automatisierung und Robotik",
+        ],
+        logo: "/logos/thws_logo.jpeg",
+      },
     ],
     contact: [
       "05 — Kontakt",
@@ -395,10 +587,34 @@ function ScrollScene() {
 
 export default function Home() {
   const [lang, setLang] = useState<"en" | "de">("en");
+  const [latestIndex, setLatestIndex] = useState(0);
   const t = data[lang];
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("portfolio-language");
+    if (savedLanguage === "en" || savedLanguage === "de") {
+      setLang(savedLanguage);
+      return;
+    }
+
+    const prefersGerman = window.navigator.languages.some((language) =>
+      language.toLowerCase().startsWith("de"),
+    );
+    setLang(prefersGerman ? "de" : "en");
+  }, []);
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+  useEffect(() => {
+    setLatestIndex(0);
+    const timer = window.setInterval(() => {
+      setLatestIndex((current) => (current + 1) % data[lang].label.length);
+    }, 4800);
+    return () => window.clearInterval(timer);
+  }, [lang]);
+  const selectLanguage = (language: "en" | "de") => {
+    window.localStorage.setItem("portfolio-language", language);
+    setLang(language);
+  };
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const els = document.querySelectorAll<HTMLElement>(".reveal");
@@ -432,16 +648,16 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           {t.nav.map((x, i) => (
-            <a key={x} href={`#${["experience", "work", "education", "contact"][i]}`}>
+            <a key={x} href={`#${["experience", "education", "contact"][i]}`}>
               {x}
             </a>
           ))}
         </nav>
         <div className="lang" aria-label="Select language">
-          <button aria-pressed={lang === "en"} onClick={() => setLang("en")}>
+          <button aria-pressed={lang === "en"} onClick={() => selectLanguage("en")}>
             EN
           </button>
-          <button aria-pressed={lang === "de"} onClick={() => setLang("de")}>
+          <button aria-pressed={lang === "de"} onClick={() => selectLanguage("de")}>
             DE
           </button>
         </div>
@@ -452,7 +668,10 @@ export default function Home() {
             <i />
             {t.status}
           </p>
-          <p className="eyebrow">{t.label}</p>
+          <p className="latestUpdate">
+            <strong>{t.latest}</strong>
+            <span key={`${lang}-${latestIndex}`}>{t.label[latestIndex]}</span>
+          </p>
           <div className="heroIdentity">
             <h1>
               {t.headline[0]}
@@ -483,11 +702,11 @@ export default function Home() {
           <p className="intro">{t.intro}</p>
           <p className="heroBio">{t.about[2]}</p>
           <div className="actions">
-            <a className="primary" href="#work">
+            <a className="primary" href="#experience">
               {t.explore}
               <b>↘</b>
             </a>
-            <a href="/Sohan-Saldanha-CV.pdf" download>
+            <a href="/CV/Sohan___CV.pdf" download>
               {t.connect}
               <b>↓</b>
             </a>
@@ -500,71 +719,98 @@ export default function Home() {
         </div>
       </section>
       <section className="section experience" id="experience">
-        <Head tag={t.exp[0]} title={t.exp[1]} />
-        <div className="timeline">
-          {t.experiences.map(([a, b, c, d], i) => (
-            <article
-              className="reveal"
-              style={{ "--delay": `${i * 80}ms` } as React.CSSProperties}
-              key={b}
+        <h2 className="sectionTitle reveal">{t.exp[0]}</h2>
+        <div className="experienceYears">
+          {t.experiences.map((group, groupIndex) => (
+            <section
+              className="experienceYear"
+              key={group.year}
+              aria-labelledby={`year-${group.year}`}
             >
-              <small>0{i + 1}</small>
-              <span>{a}</span>
-              <div>
-                <h3>{b}</h3>
-                <p>{c}</p>
-              </div>
-              <p>{d}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="section work" id="work">
-        <Head tag={t.work[0]} title={t.work[1]} />
-        <div className="projects">
-          {t.projects.map(([a, b, c, d, e], i) => (
-            <article
-              className="reveal"
-              style={{ "--delay": `${i * 70}ms` } as React.CSSProperties}
-              key={a}
-              tabIndex={0}
-            >
-              <div className="art">
-                <small>{a}</small>
-                <span className={`shape s${a}`}>
-                  <i />
-                  <i />
-                  <i />
+              <h3 className="yearMarker" id={`year-${group.year}`}>
+                <span
+                  className="reveal"
+                  style={{ "--delay": `${groupIndex * 55}ms` } as React.CSSProperties}
+                >
+                  {group.year}
                 </span>
+              </h3>
+              <div className="yearRoles">
+                {group.roles.map((role, roleIndex) => (
+                  <details
+                    className="experienceCard reveal"
+                    style={
+                      {
+                        "--delay": `${groupIndex * 55 + roleIndex * 80}ms`,
+                      } as React.CSSProperties
+                    }
+                    key={`${role.title}-${role.date}`}
+                  >
+                    <summary>
+                      <div className="roleIdentity">
+                        <span className="entryType">Experience</span>
+                        <h4>{role.title}</h4>
+                        <p className="organization">{role.organization}</p>
+                      </div>
+                      <div className="roleSide">
+                        <span className="roleLocation">{role.location}</span>
+                        <span className="roleActions">
+                          <span className="pageLink" title="Project page link coming soon">
+                            Page
+                          </span>
+                          <span className="toggleLabel">Details</span>
+                        </span>
+                      </div>
+                    </summary>
+                    <div className="roleDetails">
+                      <ul>
+                        {role.bullets.map((bullet) => (
+                          <li key={bullet}>{bullet}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
+                ))}
               </div>
-              <div className="projectCopy">
-                <small>{c}</small>
-                <h3>{b}</h3>
-                <p>{d}</p>
-                <span>{e}</span>
-                <a href="#contact">
-                  {t.details}
-                  <b>↗</b>
-                </a>
-              </div>
-            </article>
+            </section>
           ))}
         </div>
       </section>
       <section className="section education" id="education">
-        <Head tag={t.edu[0]} title={t.edu[1]} />
-        <div className="degrees">
-          {t.degrees.map(([a, b, c, d], i) => (
-            <article
-              className="reveal"
-              style={{ "--delay": `${i * 100}ms` } as React.CSSProperties}
-              key={b}
+        <h2 className="sectionTitle reveal">{t.edu}</h2>
+        <div className="educationList">
+          {t.degrees.map((degree, i) => (
+            <details
+              className="educationCard reveal"
+              style={{ "--delay": `${i * 90}ms` } as React.CSSProperties}
+              key={degree.degree}
             >
-              <small>{a}</small>
-              <h3>{b}</h3>
-              <p>{c}</p>
-              <span>{d}</span>
-            </article>
+              <summary>
+                <Image
+                  className="universityLogo"
+                  src={degree.logo}
+                  alt={`${degree.organization} logo`}
+                  width={76}
+                  height={76}
+                />
+                <div className="educationIdentity">
+                  <h3>{degree.degree}</h3>
+                  <p>{degree.organization}</p>
+                </div>
+                <div className="educationSide">
+                  <span>{degree.location}</span>
+                  <span className="specializationLabel">{t.specializationLabel}</span>
+                </div>
+              </summary>
+              <div className="specializationContent">
+                <small>{t.specializationLabel}</small>
+                <ul>
+                  {degree.specialization.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </details>
           ))}
         </div>
       </section>
@@ -590,13 +836,5 @@ export default function Home() {
         <a href="#top">{t.top} ↑</a>
       </footer>
     </main>
-  );
-}
-function Head({ tag, title }: { tag: string; title: string }) {
-  return (
-    <div className="head reveal">
-      <p>{tag}</p>
-      <h2>{title}</h2>
-    </div>
   );
 }
