@@ -47,6 +47,7 @@ const data = {
         roles: [
           {
             title: "Research Assistant",
+            page: true,
             date: "May 2025 – July 2025",
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Germany",
@@ -58,6 +59,7 @@ const data = {
           },
           {
             title: "Infant Vision Simulation",
+            page: true,
             date: "Oct 2024 – Jan 2025",
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Germany",
@@ -101,6 +103,7 @@ const data = {
           },
           {
             title: "Bachelor Thesis — LiDAR-Based Localization Evaluation",
+            page: true,
             date: "Sep 2022 – Mar 2023",
             organization: "Technical University of Applied Sciences Würzburg-Schweinfurt",
             location: "Schweinfurt, Germany",
@@ -231,6 +234,7 @@ const data = {
         roles: [
           {
             title: "Wissenschaftliche Hilfskraft",
+            page: true,
             date: "Mai 2025 – Juli 2025",
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Deutschland",
@@ -242,6 +246,7 @@ const data = {
           },
           {
             title: "Simulation des kindlichen Sehens",
+            page: true,
             date: "Okt. 2024 – Jan. 2025",
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Deutschland",
@@ -285,6 +290,7 @@ const data = {
           },
           {
             title: "Bachelorarbeit — Evaluation LiDAR-basierter Lokalisierung",
+            page: true,
             date: "Sep. 2022 – März 2023",
             organization: "Technische Hochschule Würzburg-Schweinfurt",
             location: "Schweinfurt, Deutschland",
@@ -713,9 +719,11 @@ export default function Home() {
                       <div className="roleSide">
                         <span className="roleLocation">{role.location}</span>
                         <span className="roleActions">
-                          <span className="pageLink" title="Project page link coming soon">
-                            {t.pageLabel}
-                          </span>
+                          {"page" in role && role.page ? (
+                            <span className="pageLink" title="Project page link coming soon">
+                              {t.pageLabel}
+                            </span>
+                          ) : null}
                           <span className="toggleLabel">{t.detailsLabel}</span>
                         </span>
                       </div>
