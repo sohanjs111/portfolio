@@ -38,6 +38,9 @@ const data = {
       "Machine Learning",
     ],
     exp: ["Professional Experience"],
+    experienceLabel: "Experience",
+    pageLabel: "Page",
+    detailsLabel: "Details",
     experiences: [
       {
         year: "2025",
@@ -153,31 +156,6 @@ const data = {
         ],
       },
     ],
-    work: ["03 — Selected projects", "Proof of work."],
-    details: "View project details",
-    projects: [
-      [
-        "01",
-        "LiDAR Localisation",
-        "Robotics · Research",
-        "A repeatable evaluation pipeline comparing localisation performance across simulated and real sensor data.",
-        "ROS / C++ / Docker",
-      ],
-      [
-        "02",
-        "Vision Quality Control",
-        "Vision · Automation",
-        "A mechatronic inspection system that classifies injection-moulded parts and routes decisions through Node-RED.",
-        "Computer Vision / IoT / Node-RED",
-      ],
-      [
-        "03",
-        "Intelligent Learning Platform",
-        "Product · Full-stack",
-        "A web platform combining API integrations, automated workflows and an intelligent support assistant.",
-        "Next.js / APIs / AI",
-      ],
-    ],
     edu: "Education",
     specializationLabel: "Specialization",
     degrees: [
@@ -200,12 +178,13 @@ const data = {
       },
     ],
     contact: [
-      "05 — Contact",
+      "Contact",
       "Let’s build something that moves.",
       "I’m open to engineering roles, ambitious projects and research collaborations in robotics, autonomy and software.",
     ],
     mail: "Send an email",
     linkedin: "Connect on LinkedIn",
+    github: "View GitHub",
     footer: "Designed & engineered by Sohan Saldanha",
     top: "Back to top",
   },
@@ -213,17 +192,17 @@ const data = {
     nav: ["Erfahrung", "Ausbildung", "Kontakt"],
     status: "Masterstudent an der FAU",
     latest: "Aktuell:",
-    label: ["Bachelorarbeit bei Bosch begonnen.", "Meine Website wird aktualisiert."],
-    headline: ["Ich entwickle Systeme,", "die wahrnehmen."],
+    label: ["Ich habe meine Bachelorarbeit bei Bosch begonnen.", "Ich aktualisiere meine Website."],
+    headline: ["Hi, ich bin", "Sohan Saldanha"],
     intro:
-      "Robotik, Wahrnehmung und Software — entwickelt zu zuverlässigen Produkten, die komplexe Technik verständlich machen.",
-    explore: "Erfahrung ansehen",
+      "Ich interessiere mich für Forschung und Entwicklung in den Bereichen Robotik, Computer Vision und Vision-Language-Action-Systeme (VLA) — mit dem Ziel, intelligente Maschinen zu entwickeln, die wahrnehmen, verstehen und handeln können.",
+    explore: "Berufserfahrung ansehen",
     connect: "Lebenslauf herunterladen",
     move: "Scrollen zum Entdecken",
     about: [
       "01 — Profil",
       "An der Grenze zwischen Bits und Atomen.",
-      "Ich bin Mechatronik-Ingenieur und Masterstudent für Autonomy Technologies an der FAU. Ich arbeite von Sensoren und Algorithmen bis zu Benutzeroberflächen und Deployment — denn gute autonome Produkte entstehen als Gesamtsysteme.",
+      "Ich bin Mechatronikingenieur und Masterstudent im Studiengang Autonomy Technologies an der FAU. Meine Arbeit reicht von Sensoren und Algorithmen bis hin zu Benutzeroberflächen und Deployment — denn die besten autonomen Produkte entstehen als ganzheitliche Systeme.",
     ],
     facts: [
       ["Standort", "Deutschland"],
@@ -243,6 +222,9 @@ const data = {
       "Machine Learning",
     ],
     exp: ["Berufserfahrung"],
+    experienceLabel: "Erfahrung",
+    pageLabel: "Seite",
+    detailsLabel: "Details",
     experiences: [
       {
         year: "2025",
@@ -253,9 +235,9 @@ const data = {
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Deutschland",
             bullets: [
-              "Entwicklung von scikit-learn-Pipelines zur Vorhersage von Hirnregionenvolumina aus Gesichtsmerkmalen.",
-              "Aufbau eines PCA-basierten statistischen Formmodells zur Extraktion von 3D-Gesichtsmerkmalen.",
-              "Durchführung von Merkmalsauswahl, Korrelationsanalysen, Kreuzvalidierung und Hyperparameteroptimierung.",
+              "Entwicklung von scikit-learn-Pipelines zur Vorhersage des Volumens von Hirnregionen anhand von Gesichtsmerkmalen sowie Vergleich von linearer Regression, Ridge-Regression, Entscheidungsbäumen, SVM- und SGD-Modellen.",
+              "Aufbau eines PCA-basierten statistischen Formmodells zur Extraktion von 3D-Gesichtsmerkmalen und Dimensionsreduktion.",
+              "Durchführung von Merkmalsauswahl, Korrelationsanalysen, Ausreißererkennung, Kreuzvalidierung und Hyperparameteroptimierung.",
             ],
           },
           {
@@ -264,9 +246,9 @@ const data = {
             organization: "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
             location: "Erlangen, Deutschland",
             bullets: [
-              "Simulation altersabhängiger visueller Wahrnehmung mit VGG- und ResNet18-Architekturen.",
-              "Anwendung von Curriculum Learning auf TinyImageNet und egozentrische Datensätze.",
-              "Untersuchung von Layer Freezing und stufenweisen Lernstrategien.",
+              "Simulation altersabhängiger visueller Wahrnehmung und Training von VGG- und ResNet18-Architekturen zur Untersuchung der visuellen Entwicklung.",
+              "Anwendung von Curriculum Learning auf TinyImageNet und egozentrische Datensätze, um die fortschreitende visuelle Reifung von Kleinkindern nachzubilden.",
+              "Bewertung von Layer Freezing und stufenweisen Lernstrategien hinsichtlich Modellgenauigkeit und Qualität der Merkmalsrepräsentation.",
             ],
           },
         ],
@@ -280,9 +262,9 @@ const data = {
             organization: "Talents2Germany GmbH",
             location: "Frankfurt am Main, Deutschland",
             bullets: [
-              "Entwicklung skalierbarer Python-RPA-Workflows für Scraping, Validierung und Datenintegration.",
-              "Entwicklung von Laravel-APIs zur Verbindung von Frontend, Backend und Datenbanken.",
-              "Weiterentwicklung eines internen LMS mit Next.js sowie Pflege der technischen Dokumentation.",
+              "Konzeption skalierbarer Python-RPA-Workflows für Web Scraping, Validierung, Transformation und Datenbankintegration.",
+              "Entwicklung von Laravel-Backend-APIs zur Verbindung von Frontend-Anwendungen, Diensten und Datenbanken.",
+              "Weiterentwicklung eines internen LMS mit Next.js sowie Pflege von Dokumentation, Deployment-Prozessen und Workflows.",
             ],
           },
         ],
@@ -296,9 +278,9 @@ const data = {
             organization: "Technische Hochschule Würzburg-Schweinfurt",
             location: "Schweinfurt, Deutschland",
             bullets: [
-              "Betreuung von Studierenden in C++, Datenstrukturen, Algorithmen und Betriebssystemgrundlagen.",
+              "Betreuung von Studierenden in C++, Datenstrukturen, Algorithmen und Grundlagen von Betriebssystemen.",
               "Konzeption praktischer Programmierübungen, Debugging-Workshops und Problemlösungseinheiten.",
-              "Vermittlung effizienter und wartbarer C++-Lösungen.",
+              "Anleitung zur Entwicklung effizienter, wartbarer Lösungen und zur Vertiefung softwaretechnischer Kompetenzen.",
             ],
           },
           {
@@ -307,9 +289,9 @@ const data = {
             organization: "Technische Hochschule Würzburg-Schweinfurt",
             location: "Schweinfurt, Deutschland",
             bullets: [
-              "Untersuchung und Benchmarking LiDAR-basierter Lokalisierungsalgorithmen in ROS.",
-              "Aufbau von Datenerfassungspipelines mit OptiTrack und Unity-Simulationen.",
-              "Analyse von Unterschieden zwischen simulierten und realen Sensordaten.",
+              "Untersuchung und Benchmarking LiDAR-basierter Lokalisierungsalgorithmen in ROS für die autonome Navigation.",
+              "Aufbau von Datenerfassungspipelines mit OptiTrack Motion Capture und Unity-Simulationsumgebungen.",
+              "Analyse von Unterschieden zwischen simulierten und realen Sensordaten durch reproduzierbare Experimente.",
             ],
           },
         ],
@@ -323,9 +305,9 @@ const data = {
             organization: "biz4d — Mentoring Club",
             location: "Frankfurt am Main, Deutschland",
             bullets: [
-              "Leitung eines fünfköpfigen Teams bei der Entwicklung eines Matching-Algorithmus.",
-              "Containerisierung von SuiteCRM- und Laravel-Anwendungen mit Docker sowie Linux-Administration.",
-              "Einführung von Git- und GitHub-Prozessen für Branching, Reviews und Debugging.",
+              "Leitung eines fünfköpfigen Praktikantenteams bei der Entwicklung eines Matching-Algorithmus zur Verbesserung von Empfehlungsqualität und Effizienz.",
+              "Containerisierung von SuiteCRM- und Laravel-Anwendungen mit Docker sowie Administration von Linux-Servern.",
+              "Einführung von Git- und GitHub-Prozessen für Branching, Code Reviews und gemeinsames Debugging.",
             ],
           },
           {
@@ -334,9 +316,9 @@ const data = {
             organization: "Technische Hochschule Würzburg-Schweinfurt",
             location: "Schweinfurt, Deutschland",
             bullets: [
-              "Unterstützung von mehr als 45 Studierenden in Node-RED, MQTT und Embedded Systems.",
-              "Aufbau und Test experimenteller HMI- und Automatisierungsanlagen.",
-              "Unterstützung einer Erfolgsquote von 100% in schriftlichen und praktischen Prüfungen.",
+              "Betreuung von mehr als 45 Studierenden in Node-RED, MQTT, Mikrocontrollern und eingebetteten Systemen.",
+              "Aufbau und Test experimenteller HMI- und Automatisierungsaufbauten für die praktische Lehre.",
+              "Beitrag zu einer Bestehensquote von 100 % in schriftlichen und praktischen Prüfungen.",
             ],
           },
         ],
@@ -350,38 +332,13 @@ const data = {
             organization: "Kindermann GmbH",
             location: "Würzburg, Deutschland",
             bullets: [
-              "Entwicklung eines mechatronischen Gesamtsystems mit Computer Vision und Node-RED.",
-              "Training von ResNet- und YOLO-Modellen mit 95% Klassifikationsgenauigkeit.",
-              "Bereitstellung einer robusten Pipeline für Bildaufnahme, Vorverarbeitung und Inferenz.",
+              "Entwicklung eines durchgängigen mechatronischen Systems mit Computer Vision und Node-RED zur Echtzeitklassifikation von Bauteilen.",
+              "Training von ResNet- und YOLO-Modellen mit einer Klassifikationsgenauigkeit von 95 % auf Produktionsdaten.",
+              "Bereitstellung einer Pipeline für Bildaufnahme, Vorverarbeitung und Inferenz, die gegenüber wechselnden Lichtverhältnissen robust ist.",
             ],
           },
         ],
       },
-    ],
-    work: ["03 — Ausgewählte Projekte", "Arbeit, die für sich spricht."],
-    details: "Projektdetails ansehen",
-    projects: [
-      [
-        "01",
-        "LiDAR-Lokalisierung",
-        "Robotik · Forschung",
-        "Eine Evaluationspipeline zum Vergleich von Lokalisierungsverfahren mit simulierten und realen Sensordaten.",
-        "ROS / C++ / Docker",
-      ],
-      [
-        "02",
-        "Visuelle Qualitätskontrolle",
-        "Vision · Automation",
-        "Ein mechatronisches Prüfsystem zur Klassifizierung von Spritzgussteilen mit Prozesssteuerung über Node-RED.",
-        "Computer Vision / IoT / Node-RED",
-      ],
-      [
-        "03",
-        "Intelligente Lernplattform",
-        "Produkt · Full-stack",
-        "Eine Webplattform mit API-Integrationen, automatisierten Abläufen und intelligentem Support-Assistenten.",
-        "Next.js / APIs / AI",
-      ],
     ],
     edu: "Ausbildung",
     specializationLabel: "Spezialisierung",
@@ -405,12 +362,13 @@ const data = {
       },
     ],
     contact: [
-      "05 — Kontakt",
-      "Lass uns etwas entwickeln, das bewegt.",
-      "Ich freue mich auf Engineering-Positionen, ambitionierte Projekte und Forschung in Robotik, Autonomie und Software.",
+      "Kontakt",
+      "Lass uns etwas entwickeln, das sich bewegt.",
+      "Ich bin offen für Engineering-Positionen, ambitionierte Projekte und Forschungskooperationen in den Bereichen Robotik, Autonomie und Software.",
     ],
     mail: "E-Mail senden",
     linkedin: "Auf LinkedIn verbinden",
+    github: "GitHub ansehen",
     footer: "Entworfen & entwickelt von Sohan Saldanha",
     top: "Nach oben",
   },
@@ -700,7 +658,7 @@ export default function Home() {
             </div>
           </div>
           <p className="intro">{t.intro}</p>
-          <p className="heroBio">{t.about[2]}</p>
+          <p className="intro">{t.about[2]}</p>
           <div className="actions">
             <a className="primary" href="#experience">
               {t.explore}
@@ -748,7 +706,7 @@ export default function Home() {
                   >
                     <summary>
                       <div className="roleIdentity">
-                        <span className="entryType">Experience</span>
+                        <span className="entryType">{t.experienceLabel}</span>
                         <h4>{role.title}</h4>
                         <p className="organization">{role.organization}</p>
                       </div>
@@ -756,9 +714,9 @@ export default function Home() {
                         <span className="roleLocation">{role.location}</span>
                         <span className="roleActions">
                           <span className="pageLink" title="Project page link coming soon">
-                            Page
+                            {t.pageLabel}
                           </span>
-                          <span className="toggleLabel">Details</span>
+                          <span className="toggleLabel">{t.detailsLabel}</span>
                         </span>
                       </div>
                     </summary>
@@ -818,7 +776,7 @@ export default function Home() {
         <p className="eyebrow">{t.contact[0]}</p>
         <h2>{t.contact[1]}</h2>
         <p>{t.contact[2]}</p>
-        <div>
+        <div className="contactLinks">
           <a href="mailto:sohan.j.saldanha@fau.de">
             {t.mail}
             <b>↗</b>
@@ -827,14 +785,20 @@ export default function Home() {
             {t.linkedin}
             <b>↗</b>
           </a>
+          <a href="https://github.com/sohanjs111" target="_blank" rel="noreferrer">
+            {t.github}
+            <b>↗</b>
+          </a>
         </div>
       </section>
       <footer>
         <p>
           © {new Date().getFullYear()} · {t.footer}
         </p>
-        <a href="#top">{t.top} ↑</a>
       </footer>
+      <a className="backToTop" href="#top" aria-label={t.top}>
+        {t.top} <b>↑</b>
+      </a>
     </main>
   );
 }
